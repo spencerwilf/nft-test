@@ -15,6 +15,6 @@ contract BasicNftTest is Test {
     }
 
     function testNameIsCorrect() public {
-        assertEq(basicNft.name(), "The Dawgs");
+        assertEq(keccak256(abi.encodePacked(basicNft.name())), keccak256(abi.encodePacked("The Dawgs")));
     }
 }
