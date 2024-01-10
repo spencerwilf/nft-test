@@ -10,6 +10,11 @@ contract BasicNftTest is Test {
     BasicNft public basicNft;
 
     function setUp() public {
-        
+        deployer = new DeployBasicNft();
+        basicNft = deployer.run();
+    }
+
+    function testNameIsCorrect() public {
+        assertEq(basicNft.name(), "The Dawgs");
     }
 }
